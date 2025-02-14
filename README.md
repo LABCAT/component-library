@@ -1,20 +1,18 @@
-Component Library
+# Component Library
+## Overview
 A monorepo containing:
-
-Vue components
-SCSS styles
-Storybook documentation
-External web components integration
-
-Setup
+- Vue components
+- SCSS styles
+- Storybook documentation
+- External web components integration
+## Setup
 ```bash
 pnpm install
 ```
-Development
+## Development
 ```bash
 pnpm storybook
 ```
-Structure
-
-base/ - Components and styles
-docs/ - Storybook documentation
+## Project Structure
+- `base/` - Components and styles
+- `docs/` - Storybook documentation
