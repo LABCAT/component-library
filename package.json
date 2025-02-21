@@ -3,7 +3,11 @@
     "dev": "pnpm --filter @components/base dev",
     "build": "pnpm --filter @components/base build",
     "storybook": "pnpm --filter @components/storybook storybook",
-    "chromatic": "pnpm --filter @components/storybook chromatic"
+    "chromatic": "pnpm --filter @components/storybook chromatic",
+    "docker:storybook:build": "docker build -t storybook-app -f apps/storybook/Dockerfile .",
+    "docker:storybook:run": "docker run -p 6006:6006 storybook-app",
+    "docker:storybook:stop": "docker stop $(docker ps -q --filter ancestor=storybook-app)",
+    "docker:storybook:dev": "pnpm run docker:storybook:build && pnpm run docker:storybook:run"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
