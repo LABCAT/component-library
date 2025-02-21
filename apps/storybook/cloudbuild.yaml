@@ -1,0 +1,15 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'gcr.io/adventure-kiwi/storybook-app',
+      '-t',
+      'gcr.io/adventure-kiwi/storybook-app:latest',  # Add the latest tag
+      '-f',
+      'apps/storybook/Dockerfile',
+      '.'
+    ]
+images: 
+  - 'gcr.io/adventure-kiwi/storybook-app'
+  - 'gcr.io/adventure-kiwi/storybook-app:latest'  # Ensure the latest image is pushed

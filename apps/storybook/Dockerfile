@@ -1,7 +1,7 @@
 FROM node:18-alpine as builder
 
 # Install specific pnpm version to match your system
-RUN npm install -g pnpm@8.5.1
+RUN npm install -g pnpm@9.15.0
 
 # Set working directory
 WORKDIR /app
@@ -27,5 +27,5 @@ FROM nginx:alpine
 COPY --from=builder /app/apps/storybook/storybook-static /usr/share/nginx/html
 COPY apps/storybook/nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 6006
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]

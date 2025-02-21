@@ -1,4 +1,5 @@
 {
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "dev": "pnpm --filter @components/base dev",
     "build": "pnpm --filter @components/base build",
@@ -7,7 +8,16 @@
     "docker:storybook:build": "docker build -t storybook-app -f apps/storybook/Dockerfile .",
     "docker:storybook:run": "docker run -p 6006:6006 storybook-app",
     "docker:storybook:stop": "docker stop $(docker ps -q --filter ancestor=storybook-app)",
-    "docker:storybook:dev": "pnpm run docker:storybook:build && pnpm run docker:storybook:run"
+    "docker:storybook:dev": "pnpm run docker:storybook:build && pnpm run docker:storybook:run",
+    "cloud:project:set": "gcloud config set project adventure-kiwi",
+    "cloud:build": "gcloud builds submit . --config apps/storybook/cloudbuild.yaml",
+    "cloud:tag": "DIGEST=$(gcloud container images describe gcr.io/adventure-kiwi/storybook-app --format='get(image_summary.digest)') && gcloud container images add-tag gcr.io/adventure-kiwi/storybook-app@$DIGEST gcr.io/adventure-kiwi/storybook-app:latest",
+    "cloud:deploy": "gcloud run deploy storybook-service --image gcr.io/adventure-kiwi/storybook-app --platform managed --region us-central1 --allow-unauthenticated",
+    "cloud:deploy:all": "pnpm run cloud:build && pnpm run cloud:tag && pnpm run cloud:deploy"
+  },
+  "config": {
+    "project": "adventure-kiwi",
+    "region": "us-central1"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
