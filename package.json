@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "pnpm --filter @components/base dev",
     "build": "pnpm --filter @components/base build",
-    "storybook": "pnpm --filter @components/storybook storybook"
+    "storybook": "pnpm --filter @components/storybook storybook",
+    "chromatic": "pnpm --filter @components/storybook chromatic"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

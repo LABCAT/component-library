@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "@components/base": "workspace:*",
@@ -21,6 +22,7 @@
     "@storybook/vue3-vite": "7.6.7",
     "@storybook/web-components": "7.6.7",
     "@storybook/web-components-vite": "7.6.7",
+    "chromatic": "^11.25.2",
     "storybook": "7.6.7"
   }
 }
