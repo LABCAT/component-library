@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "pnpm --filter @components/base dev",
+    "build": "pnpm --filter @components/base build",
+    "storybook": "pnpm --filter @components/storybook storybook"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "vite": "^5.0.0"
+  }
+}

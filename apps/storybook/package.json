@@ -1,0 +1,26 @@
+{
+  "name": "@components/storybook",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@components/base": "workspace:*",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.6.7",
+    "@storybook/addon-interactions": "7.6.7",
+    "@storybook/addon-links": "7.6.7",
+    "@storybook/addon-themes": "7.6.7",
+    "@storybook/blocks": "7.6.7",
+    "@storybook/test": "7.6.7",
+    "@storybook/vue3": "7.6.7",
+    "@storybook/vue3-vite": "7.6.7",
+    "@storybook/web-components": "7.6.7",
+    "@storybook/web-components-vite": "7.6.7",
+    "storybook": "7.6.7"
+  }
+}
