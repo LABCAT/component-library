@@ -1,0 +1,19 @@
+.element {
+  padding-block: var(--element-spacing, var(--base-element-spacing));
+
+  &--full-bleed {
+    & + & {
+      margin-block-start: calc(
+        var(--element-spacing, var(--base-element-spacing)) * -2
+      );
+    }
+  }
+}
+
+.elements {
+  .element:last-child {
+    padding-block-end: calc(
+      var(--element-spacing, var(--base-element-spacing)) * 2
+    );
+  }
+}

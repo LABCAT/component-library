@@ -1,0 +1,9 @@
+.image {
+  &--with-caption {
+    margin-bottom: 0;
+
+    + figcaption {
+      @include image-caption;
+    }
+  }
+}

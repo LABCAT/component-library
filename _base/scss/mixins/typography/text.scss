@@ -1,0 +1,146 @@
+@mixin typography-p {
+  margin-block: var(--paragraph-spacing, var(--base-paragraph-spacing));
+  line-height: 1.5;
+  font-size: to-rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    line-height: 1.67;
+    font-size: to-rem(18px);
+  }
+}
+
+@mixin typography-intro {
+  --base-paragraph-spacing: 20px;
+
+  margin-block: var(--paragraph-spacing, var(--base-paragraph-spacing));
+  line-height: 1.44;
+  font-size: to-rem(18px);
+  font-weight: bold;
+
+  @include media-breakpoint-up(sm) {
+    --base-paragraph-spacing: 30px;
+
+    font-size: to-rem(22px);
+  }
+}
+
+@mixin typography-em {
+  font-style: italic;
+}
+
+@mixin typography-strong {
+  font-weight: 600;
+}
+
+@mixin typography-hr {
+  margin-block: var(--paragraph-spacing, var(--base-paragraph-spacing));
+  border: 0;
+  border-bottom: 1px solid currentcolor;
+}
+
+@mixin typography-list {
+  @include typography-p;
+
+  margin-inline: 0;
+  padding: 0;
+  list-style: none;
+  list-style-position: inside;
+
+  ul,
+  ol {
+    margin-block: var(--list-item-spacing, var(--base-list-item-spacing));
+  }
+}
+
+@mixin typography-li {
+  margin-top: 0;
+  padding-left: var(--list-indent, var(--base-list-indent));
+  font-size: inherit;
+
+  &::before {
+    display: inline-block;
+    margin-left: calc(var(--list-indent, var(--base-list-indent)) * -1);
+    width: var(--list-indent, var(--base-list-indent));
+    text-align: left;
+  }
+
+  + li {
+    margin-block: var(--list-item-spacing, var(--base-list-item-spacing));
+  }
+}
+
+@mixin typography-ul {
+  @include typography-list;
+
+  // Level 1
+  li::before {
+    font-weight: bold;
+    content: '•';
+  }
+}
+
+@mixin typography-ol {
+  @include typography-list;
+
+  ::marker {
+    text-align: left;
+  }
+
+  // Level 1
+  li {
+    counter-increment: level1;
+
+    &::before {
+      font-weight: bold;
+      content: counter(level1, decimal) '.';
+    }
+  }
+
+  // Reset level 2
+  ul {
+    @include typography-ul;
+
+    li {
+      counter-reset: level1;
+    }
+  }
+
+  ol {
+    // Level 2
+    li {
+      counter-increment: level2;
+
+      &::before {
+        content: counter(level2, lower-alpha) '.';
+      }
+    }
+
+    // Reset level 3
+    ul {
+      @include typography-ul;
+
+      li {
+        counter-reset: level2;
+      }
+    }
+
+    ol {
+      // Level 3
+      li {
+        counter-increment: level3;
+
+        &::before {
+          content: counter(level3, lower-roman) '.';
+        }
+      }
+
+      ul {
+        @include typography-ul;
+
+        li {
+          counter-reset: level3;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.typography h1 {
+  @include typography-h1;
+}
+
+.typography h2 {
+  @include typography-h2;
+}
+
+.typography h3 {
+  @include typography-h3;
+}
+
+.typography h4 {
+  @include typography-h4;
+}
+
+.typography h5 {
+  @include typography-h5;
+}
+
+.typography h6 {
+  @include typography-h6;
+}
+
+.typography p {
+  @include typography-p;
+}
+
+.typography .intro-text {
+  @include typography-intro;
+}
+
+.typography i,
+.typography em {
+  @include typography-em;
+}
+
+.typography b,
+.typography strong {
+  @include typography-strong;
+}
+
+.typography hr {
+  @include typography-hr;
+}
+
+.typography li {
+  @include typography-li;
+}
+
+.typography ul {
+  @include typography-ul;
+}
+
+.typography ol {
+  @include typography-ol;
+}
+
+.typography:not(.video__transcript) table {
+  @include typography-table;
+}
+
+.typography a:not(.button, .button-text) {
+  @include typography-a;
+}
+
+.typography > :first-child {
+  margin-top: 0;
+}
+
+.typography > :last-child {
+  margin-bottom: 0;
+}

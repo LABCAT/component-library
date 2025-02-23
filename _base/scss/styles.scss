@@ -1,0 +1,21 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+@use 'sass:meta';
+@layer sanitize, common;
+
+/* stylelint-disable-next-line scss/at-rule-no-unknown */
+@import-sanitize layer(sanitize); // https://csstools.github.io/sanitize.css/
+
+@layer common {
+  // CSS Vars and mixins
+  @import 'variables';
+  @import 'mixins';
+
+  // Common styles
+  @import 'common/base';
+  @import 'common/containers';
+  @import 'common/elements';
+  @import 'common/forms';
+  @import 'common/images';
+  @import 'common/print';
+  @import 'common/typography';
+}

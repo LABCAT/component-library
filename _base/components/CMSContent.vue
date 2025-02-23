@@ -1,5 +1,5 @@
 <template>
-  <div v-html="content"></div>
+  <div v-html="content" class="typography"></div>
 </template>
 
 <script setup lang="ts">

@@ -1,0 +1,110 @@
+html {
+  height: 100%;
+  line-height: 1.2;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  // Fix fonts appearing too skinny on high-res displays
+  @media (min-resolution: 192dpi) {
+    -webkit-font-smoothing: auto;
+  }
+}
+
+.theme-surface {
+  background-color: var(--surface-color);
+  color: var(--ink-color);
+}
+
+body {
+  transition-duration: var(--duration-override, 0s);
+  transition-property: color, background-color;
+  transition-timing-function: var(--easing-default);
+  background-color: var(--surface-color);
+  min-height: 100vh;
+  color: var(--ink-color);
+  overscroll-behavior-y: none;
+}
+
+// Stop scroll lock affecting sticky elements
+html,
+body {
+  &[style*='overflow: hidden;'] {
+    overflow: clip !important;
+  }
+}
+
+// A more sensible default for svgs
+:where(svg) {
+  display: block;
+}
+
+// Prevent space from sanitize.css
+:where(nav li::before) {
+  position: absolute;
+}
+
+// Override sanitize.css
+:where([aria-controls]) {
+  cursor: default;
+}
+
+// Make search fields look like text fields
+:where(input[type='search']) {
+  appearance: none;
+  border-radius: 0;
+}
+
+:where(button) {
+  color: inherit;
+}
+
+.sr-only {
+  @include sr-only;
+}
+
+.sr-only--focusable {
+  @include sr-only-focusable;
+}
+
+.skip-link {
+  @include link-highlight;
+
+  color: var(--ink-color);
+}
+
+.edit-link {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  transition: var(--trs-default);
+  z-index: 100;
+  border-radius: 50px;
+  background-color: color-mix(in srgb, var(--black), transparent 30%);
+  padding: 5px 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--black);
+  }
+}
+
+/*
+  This will hide the focus indicator if the element receives focus via the mouse,
+  but it will still show up on keyboard focus.
+*/
+@supports selector(:focus-visible) {
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  :focus-visible {
+    @include outline;
+  }
+}

@@ -1,0 +1,115 @@
+@mixin typography-h1 {
+  --base-heading-spacing-top: 0;
+  --base-heading-spacing-bottom: 0;
+
+  margin-top: var(--heading-spacing-top, var(--base-heading-spacing-top));
+  margin-bottom: var(
+    --heading-spacing-bottom,
+    var(--base-heading-spacing-bottom)
+  );
+  line-height: 0.82;
+  font-size: to-rem(55px);
+
+  @include media-breakpoint-up(sm) {
+    line-height: 0.82;
+    font-size: to-rem(80px);
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: to-rem(110px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    line-height: 0.83;
+    font-size: to-rem(180px);
+  }
+}
+
+@mixin typography-h2 {
+  --base-heading-spacing-top: 40px;
+  --base-heading-spacing-bottom: 20px;
+
+  margin-top: var(--heading-spacing-top, var(--base-heading-spacing-top));
+  margin-bottom: var(
+    --heading-spacing-bottom,
+    var(--base-heading-spacing-bottom)
+  );
+  line-height: 1;
+  font-size: to-rem(34px);
+
+  @include media-breakpoint-up(sm) {
+    --base-heading-spacing-top: 60px;
+    --base-heading-spacing-bottom: 30px;
+
+    font-size: to-rem(40px);
+  }
+}
+
+@mixin typography-h2-alt {
+  --base-heading-spacing-top: 0;
+  --base-heading-spacing-bottom: 5px;
+
+  margin-top: var(--heading-spacing-top, var(--base-heading-spacing-top));
+  margin-bottom: var(
+    --heading-spacing-bottom,
+    var(--base-heading-spacing-bottom)
+  );
+  line-height: 1;
+  letter-spacing: -0.48px;
+  font-size: to-rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    --base-heading-spacing-bottom: 10px;
+
+    letter-spacing: -0.9px;
+    font-size: to-rem(30px);
+  }
+}
+
+@mixin typography-h3 {
+  margin-top: var(--heading-spacing-top, var(--base-heading-spacing-top));
+  margin-bottom: var(
+    --heading-spacing-bottom,
+    var(--base-heading-spacing-bottom)
+  );
+  line-height: 1.08;
+  font-size: to-rem(26px);
+
+  @include media-breakpoint-up(sm) {
+    font-size: to-rem(30px);
+  }
+}
+
+@mixin typography-h4 {
+  margin-top: var(--heading-spacing-top, var(--base-heading-spacing-top));
+  margin-bottom: var(
+    --heading-spacing-bottom,
+    var(--base-heading-spacing-bottom)
+  );
+  line-height: 1.33;
+  font-size: to-rem(18px);
+
+  @include media-breakpoint-up(sm) {
+    line-height: 1.18;
+    font-size: to-rem(22px);
+  }
+}
+
+@mixin typography-h5 {
+  margin-top: var(--heading-spacing-top, var(--base-heading-spacing-top));
+  margin-bottom: var(
+    --heading-spacing-bottom,
+    var(--base-heading-spacing-bottom)
+  );
+  line-height: 1.13;
+  font-size: to-rem(16px);
+
+  @include media-breakpoint-up(sm) {
+    line-height: 1.11;
+    font-size: to-rem(18px);
+  }
+}
+
+@mixin typography-h6 {
+  @include typography-h5;
+}

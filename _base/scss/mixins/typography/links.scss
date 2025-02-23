@@ -1,0 +1,118 @@
+@mixin link-highlight {
+  @include link-highlight-base;
+
+  &:hover {
+    @include link-highlight-hover;
+  }
+
+  &:focus-visible {
+    @include link-highlight-focus;
+  }
+}
+
+@mixin link-highlight-base {
+  --self-surface-color: var(--link-surface-color);
+
+  position: relative;
+  transition: background-position, color;
+  transition-delay: 0;
+  transition-duration: var(--duration-short);
+  transition-timing-function: var(--easing-default);
+  border-bottom: 1px solid var(--self-surface-color);
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    var(--self-surface-color) 50%,
+    var(--self-surface-color)
+  );
+  background-size: 100% 200%;
+  padding-block: 0.3em 0.1em;
+  color: var(--link-ink-color);
+  background-position-y: 0;
+  box-decoration-break: clone;
+
+  @include media-breakpoint-up(sm) {
+    padding-block: 0.35em 0.2em;
+  }
+
+  &[href^='mailto'] {
+    @media print {
+      border: none;
+    }
+  }
+}
+
+@mixin link-highlight-hover {
+  --self-surface-color: var(
+    --link-surface-color-interact,
+    var(--link-surface-color)
+  );
+
+  color: var(--link-ink-color-interact);
+  background-position-y: 100%;
+}
+
+@mixin link-highlight-focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 1px currentcolor;
+}
+
+@mixin typography-link-external {
+  &::after {
+    display: inline-block;
+    margin-left: 5px;
+    background-color: currentcolor;
+    width: 0.625em; // 10px at font-size 16px
+    height: 0.625em; // 10px at font-size 16px
+    content: '';
+    mask-image: svg-load('link-external.svg');
+    mask-size: cover;
+
+    @media print {
+      display: inline;
+      margin: 0;
+      width: auto;
+      height: auto;
+      font-size: 12px;
+      content: ' (' attr(href) ')';
+      mask: none;
+    }
+  }
+}
+
+@mixin typography-link-download {
+  &::after {
+    display: inline-block;
+    margin-left: 5px;
+    background-color: currentcolor;
+    width: 0.625em; // 10px at font-size 16px
+    height: 0.75em; // 12px at font-size 16px
+    content: '';
+    mask-size: cover;
+    mask-image: svg-load('link-download.svg');
+  }
+
+  .download-link__details {
+    letter-spacing: to-rem(0.5px);
+    font-size: to-rem(12px);
+  }
+}
+
+@mixin typography-a {
+  --link-ink-color: var(--ink-color);
+  --link-surface-color: var(--ink-color);
+
+  @include link-highlight;
+
+  text-decoration: none;
+
+  &[href^='http']:not([download]) {
+    @include typography-link-external;
+  }
+
+  &[download] {
+    @include typography-link-download;
+  }
+}

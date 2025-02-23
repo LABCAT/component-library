@@ -1,0 +1,78 @@
+@use 'sass:math';
+
+@function to-rem($size) {
+  @return math.div($size, 16px) * 1rem;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin line-clamp($num) {
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin mask-image-svg($icon, $color: none) {
+  mask-image: svg-load('#{$icon}');
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background-color: $color;
+}
+
+@mixin background-image-svg($icon, $fill: none, $stroke: none) {
+  background-image: svg-load(
+    '#{$icon}',
+    'fill: #{$fill}',
+    'stroke: #{$stroke}'
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin outline {
+  outline: var(--outline-color, var(--default-outline-color)) solid 1.5px;
+  outline-offset: 2px;
+
+  @supports (outline-color: color-mix(in srgb, #000, #fff)) {
+    outline-color: color-mix(
+      in srgb,
+      var(--outline-color, var(--default-outline-color)),
+      transparent 50%
+    );
+  }
+}
+
+@mixin scrollbar {
+  scrollbar-color: var(--scrollbar-color) transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--scrollbar-color);
+  }
+}
+
+@mixin no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}

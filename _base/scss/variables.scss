@@ -1,0 +1,149 @@
+// Base Theme
+:root,
+.theme {
+  // Basic colors
+  --white: #fff;
+  --black: #000;
+
+  // Themed colors
+  --theme-primary: var(--black);
+
+  // Surface
+  --surface-color: var(--white);
+  --surface-color-inverse: var(--black);
+
+  // Background
+  --background-color: var(--surface-color);
+
+  // Ink
+  --ink-color: var(--black);
+  --ink-color-inverse: var(--white);
+  --ink-color-disabled: #9d9fa1;
+
+  // Other
+  --default-outline-color: var(--theme-primary);
+  --logo-color: var(--ink-color);
+
+  // Spacing
+  --base-heading-spacing-top: 20px;
+  --base-heading-spacing-bottom: 14px;
+  --base-paragraph-spacing: 14px;
+  --base-list-item-spacing: 10px;
+  --base-list-indent: 30px;
+  --base-element-spacing: 30px;
+
+  // Forms
+  --error-color: #ff2600;
+
+  // Links
+  --link-ink-color: var(--ink-color);
+  --link-ink-color-interact: var(--surface-color);
+  --link-surface-color: var(--ink-color);
+  --link-surface-color-interact: var(--link-surface-color);
+
+  // Buttons
+  --button-surface-color: var(--surface-color-inverse);
+  --button-surface-color-interact: var(--theme-primary);
+  --button-ink-color: var(--ink-color-inverse);
+  --button-ink-color-interact: var(--ink-color);
+  --button-stroke-color: transparent;
+  --button-stroke-color-interact: transparent;
+  --button-icon-width: 36px;
+  --button-icon-height: 36px;
+
+  // Easings
+  // In
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+  // Out
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  // In-Out
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+  // Transitions
+  --duration-short: var(--override-duration, 0.2s);
+  --duration-medium: var(--override-duration, 0.3s);
+  --duration-long: var(--override-duration, 0.5s);
+  --duration-default: var(--duration-short);
+  --easing-default: var(--override-easing, var(--ease-in-out-quart));
+  --trs-short: all var(--duration-short) var(--easing-default);
+  --trs-medium: all var(--duration-medium) var(--easing-default);
+  --trs-long: all var(--duration-long) var(--easing-default);
+  --trs-default: all var(--duration-default) var(--easing-default);
+
+  // Containers
+  --base-gutter: 18px;
+  --safe-gutter-left: max(
+    env(safe-area-inset-left),
+    var(--gutter, var(--base-gutter))
+  );
+  --safe-gutter-right: max(
+    env(safe-area-inset-right),
+    var(--gutter, var(--base-gutter))
+  );
+  --safe-gutters: calc(var(--safe-gutter-left) + var(--safe-gutter-left));
+  --container-width: 540px;
+
+  @include media-breakpoint-up(sm) {
+    --gutter: 24px;
+    --base-heading-spacing-top: 30px;
+    --base-heading-spacing-bottom: 18px;
+    --base-paragraph-spacing: 18px;
+    --base-list-spacing: 15px;
+    --base-list-item-spacing: 15px;
+    --base-list-indent: 40px;
+    --base-element-spacing: 40px;
+  }
+
+  @include media-breakpoint-up(md) {
+    --button-icon-width: 46px;
+    --button-icon-height: 46px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --base-header-space: 210px;
+    --container-width: 1200px;
+    --base-element-spacing: 50px;
+  }
+}
+
+.theme {
+  &--light {
+    // Defined in the vars above
+  }
+
+  &--dark {
+    // Surface
+    --surface-color: var(--black);
+    --surface-color-inverse: var(--white);
+
+    // Ink
+    --ink-color: var(--white);
+    --ink-color-inverse: var(--black);
+
+    // Link
+    --link-ink-color-interact: var(--ink-color-inverse);
+
+    // Button
+    --button-surface-color: var(--surface-color-inverse);
+    --button-surface-color-interact: var(--theme-primary);
+    --button-ink-color: var(--ink-color-inverse);
+    --button-ink-color-interact: var(--ink-color-inverse);
+  }
+}

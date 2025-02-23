@@ -23,6 +23,10 @@
     "@storybook/web-components": "7.6.7",
     "@storybook/web-components-vite": "7.6.7",
     "chromatic": "^11.25.2",
-    "storybook": "7.6.7"
+    "postcss-inline-svg": "^6.0.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^16.0.5",
+    "storybook": "7.6.7",
+    "vite-svg-loader": "^5.1.0"
   }
 }

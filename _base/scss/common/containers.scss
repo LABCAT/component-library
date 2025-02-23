@@ -1,0 +1,47 @@
+.container {
+  --container-width: 1200px;
+  --container-gutter-left: max(
+    env(safe-area-inset-left),
+    var(--gutter, var(--base-gutter))
+  );
+  --container-gutter-right: max(
+    env(safe-area-inset-right),
+    var(--gutter, var(--base-gutter))
+  );
+  --container-gutters: calc(
+    var(--container-gutter-left) + var(--container-gutter-right)
+  );
+
+  margin-inline: auto;
+  padding-inline: var(--container-gutter-left) var(--container-gutter-right);
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-gutters));
+}
+
+.container--full-width {
+  --container-width: 2560px;
+
+  padding: 0;
+}
+
+.container--full-width-padded {
+  --container-width: 2560px;
+}
+
+.container--content {
+  --container-width: 600px;
+
+  @include media-breakpoint-up(lg) {
+    --container-width: 800px;
+  }
+}
+
+.container--narrow {
+  @include media-breakpoint-up(lg) {
+    --container-width: 1000px;
+  }
+}
+
+.container--wide {
+  --container-width: 1200px;
+}

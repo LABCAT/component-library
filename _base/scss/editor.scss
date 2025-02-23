@@ -1,0 +1,31 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+@use 'sass:meta';
+@layer sanitize, editor, common;
+/* stylelint-disable-next-line scss/at-rule-no-unknown */
+@import-sanitize layer(sanitize); // https://csstools.github.io/sanitize.css/
+
+@layer common {
+  // CSS Vars and mixins
+  @import 'variables';
+  @import 'fonts';
+
+  // Common styles
+  @import 'common/base';
+  @import 'common/containers';
+  @import 'common/elements';
+  @import 'common/forms';
+  @import 'common/images';
+  @import 'common/tables';
+  @import 'common/typography';
+}
+
+@layer editor {
+  :root {
+    cursor: unset;
+  }
+
+  #tinymce.mce-content-body {
+    box-sizing: content-box;
+    padding: 1rem;
+  }
+}
