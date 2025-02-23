@@ -5,11 +5,15 @@ steps:
       '-t',
       'gcr.io/adventure-kiwi/storybook-app',
       '-t',
-      'gcr.io/adventure-kiwi/storybook-app:latest',  # Add the latest tag
+      'gcr.io/adventure-kiwi/storybook-app:latest',
+      '--build-arg',
+      'VITE_WEB_COMPONENT_URL=${_VITE_WEB_COMPONENT_URL}',
       '-f',
       'apps/storybook/Dockerfile',
       '.'
     ]
-images: 
+images:
   - 'gcr.io/adventure-kiwi/storybook-app'
-  - 'gcr.io/adventure-kiwi/storybook-app:latest'  # Ensure the latest image is pushed
+  - 'gcr.io/adventure-kiwi/storybook-app:latest'
+substitutions:
+  _VITE_WEB_COMPONENT_URL: ''  # Default empty value

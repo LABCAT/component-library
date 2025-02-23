@@ -1,5 +1,9 @@
 FROM node:18-alpine as builder
 
+# Web component env var
+ARG VITE_WEB_COMPONENT_URL
+ENV VITE_WEB_COMPONENT_URL=$VITE_WEB_COMPONENT_URL
+
 # Install specific pnpm version to match your system
 RUN npm install -g pnpm@9.15.0
 
