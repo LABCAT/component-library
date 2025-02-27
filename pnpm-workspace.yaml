@@ -1,3 +1,4 @@
 packages:
   - '_base'
+  - '_header'
   - 'apps/*'

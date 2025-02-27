@@ -12,12 +12,20 @@ A monorepo containing:
 ```
 ./
 ├── apps/
-│   └── storybook/     # Storybook documentation and demos
-├── _base/              # Core component library
+│   ├── storybook/     # Storybook documentation and demos
+│   └── astro/         # Astro site
+├── _base/             # Core component library
 │   └── package.json   # Base package configuration
+├── _header/           # Header component/application
 ├── README.md
-└── package.json       # Workspace configuration
+└── .gitignore
 ```
+
+## Packages
+- `_base`: Core component library
+- `_header`: Header component/application
+- `apps/storybook`: Storybook documentation
+- `apps/astro`: Astro site
 
 ## Setup
 ```bash
@@ -31,6 +39,12 @@ pnpm run storybook
 
 # Publish Storybook to Chromatic
 pnpm chromatic
+
+# Develop header application
+pnpm run header:dev
+
+# Develop Astro site
+pnpm run astro:dev
 ```
 
 ## Chromatic Integration
@@ -45,7 +59,14 @@ pnpm chromatic
 
 ## Stack
 - Vue 3
+- Astro
 - Storybook 7
 - SCSS
 - pnpm workspaces
 - Chromatic
+
+## Next Steps
+1. Module Federation Implementation
+   - Integrate Module Federation between header and Astro app
+   - Convert header to a remote module
+   - Configure Astro app as a host application
