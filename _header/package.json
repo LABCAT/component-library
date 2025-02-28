@@ -5,12 +5,14 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "serve": "vite preview"
   },
   "dependencies": {
     "vue": "^3.3.0"
   },
   "devDependencies": {
+    "@module-federation/vite": "^1.2.3",
     "@vitejs/plugin-vue": "^4.2.0",
     "sass": "^1.62.0",
     "typescript": "^5.0.0",

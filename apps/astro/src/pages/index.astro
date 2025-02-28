@@ -1,5 +1,9 @@
 ---
-// Import components or define your Astro component script here
+// Astro frontmatter
+const vueScriptUrl =
+  "https://cdn.jsdelivr.net/npm/vue@3.2.0/dist/vue.global.js";
+const headerAppScriptUrl = "http://localhost:4173/assets/index-342654e4.js";
+const headerAppCssUrl = "http://localhost:4173/assets/Header-416b5eb0.css";
 ---
 
 <html lang="en">
@@ -7,11 +11,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Astro Site</title>
+
+    <!-- Load Vue as a regular script to expose it globally -->
+    <script src={vueScriptUrl}></script>
+
+    <!-- Load the CSS for the Header component -->
+    <link rel="stylesheet" href={headerAppCssUrl} />
   </head>
   <body>
+    <div id="app"></div>
     <main>
       <h1>Welcome to my Astro site</h1>
       <p>This is a simple Astro site in a monorepo structure.</p>
     </main>
+
+    <script type="module" src={headerAppScriptUrl}></script>
   </body>
 </html>
