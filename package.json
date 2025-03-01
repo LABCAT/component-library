@@ -8,9 +8,9 @@
     "docker:storybook:run": "docker run -p 6006:6006 storybook-app",
     "docker:storybook:stop": "docker stop $(docker ps -q --filter ancestor=storybook-app)",
     "docker:storybook:dev": "pnpm run docker:storybook:build && pnpm run docker:storybook:run",
-    "header:dev": "pnpm --filter @components/header dev",
-    "header:build": "pnpm --filter @components/header build",
-    "header:serve": "pnpm --filter @components/header serve",
+    "nav:dev": "pnpm --filter @components/main-nav dev",
+    "nav:build": "pnpm --filter @components/main-nav build",
+    "nav:serve": "pnpm --filter @components/main-nav serve",
     "astro:dev": "pnpm --filter @apps/astro dev",
     "astro:build": "pnpm --filter @apps/astro build",
     "astro:preview": "pnpm --filter @apps/astro preview"

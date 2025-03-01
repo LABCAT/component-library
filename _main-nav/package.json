@@ -1,5 +1,5 @@
 {
-  "name": "@components/header",
+  "name": "@components/main-nav",
   "version": "0.1.0",
   "description": "Header app",
   "private": true,
@@ -12,7 +12,6 @@
     "vue": "^3.3.0"
   },
   "devDependencies": {
-    "@module-federation/vite": "^1.2.3",
     "@vitejs/plugin-vue": "^4.2.0",
     "sass": "^1.62.0",
     "typescript": "^5.0.0",

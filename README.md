@@ -16,14 +16,14 @@ A monorepo containing:
 │   └── astro/         # Astro site
 ├── _base/             # Core component library
 │   └── package.json   # Base package configuration
-├── _header/           # Header component/application
+├── _main-nav/           # Header component/application
 ├── README.md
 └── .gitignore
 ```
 
 ## Packages
 - `_base`: Core component library
-- `_header`: Header component/application
+- `_main-nav`: Header component/application
 - `apps/storybook`: Storybook documentation
 - `apps/astro`: Astro site
 

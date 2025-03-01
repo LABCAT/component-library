@@ -1,4 +1,4 @@
-import Header from '../../../_header/src/Header.vue';
+import Header from '../../../_main-nav/src/Header.vue';
 import { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta<typeof Header> = {
