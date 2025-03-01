@@ -1,11 +1,12 @@
 {
-  "name": "@components/header",
+  "name": "@components/main-nav",
   "version": "0.1.0",
   "description": "Header app",
   "private": true,
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "serve": "vite preview"
   },
   "dependencies": {
     "vue": "^3.3.0"
