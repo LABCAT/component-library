@@ -66,6 +66,9 @@ importers:
       '@components/base':
         specifier: workspace:*
         version: link:../../_base
+      sanitize.css:
+        specifier: ^13.0.0
+        version: 13.0.0
       vue:
         specifier: ^3.4.0
         version: 3.4.0(typescript@5.7.3)
@@ -4738,6 +4741,9 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
+  sanitize.css@13.0.0:
+    resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
+
   sass-loader@16.0.5:
     resolution: {integrity: sha512-oL+CMBXrj6BZ/zOq4os+UECPL+bWqt6OAC6DWS8Ln8GZRcMDjlJ4JC3FBDuHJdYaFWIdKNIBYmtZtK2MaMkNIw==}
     engines: {node: '>= 18.12.0'}
@@ -5435,8 +5441,8 @@ packages:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
 
-  vue-component-type-helpers@2.2.4:
-    resolution: {integrity: sha512-F66p0XLbAu92BRz6kakHyAcaUSF7HWpWX/THCqL0TxySSj7z/nok5UUMohfNkkCm1pZtawsdzoJ4p1cjNqCx0Q==}
+  vue-component-type-helpers@2.2.8:
+    resolution: {integrity: sha512-4bjIsC284coDO9om4HPA62M7wfsTvcmZyzdfR0aUlFXqq4tXxM1APyXpNVxPC8QazKw9OhmZNHBVDA6ODaZsrA==}
 
   vue-docgen-api@4.79.2:
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
@@ -7887,7 +7893,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.0(typescript@5.7.3)
-      vue-component-type-helpers: 2.2.4
+      vue-component-type-helpers: 2.2.8
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -11231,6 +11237,8 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
+  sanitize.css@13.0.0: {}
+
   sass-loader@16.0.5(sass@1.70.0):
     dependencies:
       neo-async: 2.6.2
@@ -11845,7 +11853,7 @@ snapshots:
 
   void-elements@3.1.0: {}
 
-  vue-component-type-helpers@2.2.4: {}
+  vue-component-type-helpers@2.2.8: {}
 
   vue-docgen-api@4.79.2(vue@3.4.0(typescript@5.7.3)):
     dependencies:

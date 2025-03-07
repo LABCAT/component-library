@@ -1,0 +1,35 @@
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns, 1), 1fr);
+    column-gap: var(--grid-column-gap, 16px);
+    row-gap: var(--grid-row-gap, 16px);
+    width: 100%;
+    max-width: var(--grid-max-width, 1200px);
+    margin: 0 auto;
+    padding: 0 var(--grid-padding-x, 16px);
+    
+    @include media-breakpoint-up(md) {
+      --grid-columns: 2;
+      --grid-padding-x: 84px;
+    }
+    
+    &--3-cols {
+      row-gap: var(--grid-row-gap, 30px);
+      
+      @include media-breakpoint-up(md) {
+        --grid-columns: 2;
+        row-gap: var(--grid-row-gap, 40px);
+      }
+      
+      @include media-breakpoint-up(lg) {
+        --grid-columns: 3;
+        --grid-column-gap: 15px;
+      }
+    }
+    
+    &--4-cols {
+      @include media-breakpoint-up(lg) {
+        --grid-columns: 4;
+      }
+    }
+  }

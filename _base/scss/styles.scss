@@ -5,6 +5,8 @@
 /* stylelint-disable-next-line scss/at-rule-no-unknown */
 @import-sanitize layer(sanitize); // https://csstools.github.io/sanitize.css/
 
+@import '../../apps/storybook/node_modules/sanitize.css/sanitize.css';
+
 @layer common {
   // CSS Vars and mixins
   @import 'variables';
@@ -17,5 +19,6 @@
   @import 'common/forms';
   @import 'common/images';
   @import 'common/print';
+  @import 'common/tile-grid';
   @import 'common/typography';
 }

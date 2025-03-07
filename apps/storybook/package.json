@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@components/base": "workspace:*",
+    "sanitize.css": "^13.0.0",
     "vue": "^3.4.0"
   },
   "devDependencies": {
