@@ -4,10 +4,10 @@
     column-gap: var(--grid-column-gap, 16px);
     row-gap: var(--grid-row-gap, 16px);
     width: 100%;
-    max-width: var(--grid-max-width, 1200px);
-    margin: 0 auto;
     padding: 0 var(--grid-padding-x, 16px);
-    
+    max-width: calc(var(--grid-max-width, 1200px) + (var(--grid-padding-x, 16px) * 2));
+    margin: 0 auto;
+  
     @include media-breakpoint-up(md) {
       --grid-columns: 2;
       --grid-padding-x: 84px;
